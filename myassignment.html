@@ -1,0 +1,152 @@
+<style>
+    #functions {
+        /*background-color: cyan;*/
+        margin-left: 50px;
+        font-size: large;
+        color:rgb(234, 245, 242);
+        border-radius: 10px;
+
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Algorithms</title>
+    </head>
+ 
+    <body style="background-color:rgb(25, 12, 56);">
+        <P><h1 style="color:white; text-align:center; margin-top:10px;">MEAN, MEDIAN AND MODE</h1></P>
+        <h2 style="color:white;">Mean</h2>
+        <p style="color:rgb(169, 169, 169);">The "mean" is the "average" you're used to, where you <br>add up all the numbers
+             and then divide by the number of numbers.
+            
+             <br>For example, the "mean" of [3, 5, 4, 4, 1, 1, 2, 3] is 2.875.</p>
+
+             <div id="functions">
+                function mean(numbers) {<br>
+                    var total = 0, i;<br>
+                    for (i = 0; i < numbers.length; i += 1) {<br>
+                        total += numbers[i];<br>
+                    }<br>
+                    return total / numbers.length;<br>
+                }
+             </div>
+    <!--<script type="text/javascript">
+            function mean(numbers) {
+    var total = 0, i;
+    for (i = 0; i < numbers.length; i += 1) {
+        total += numbers[i];
+    }
+    return total / numbers.length;
+}
+    </script>
+-->
+ <p>
+     <h2 style="color:white;">Median</h2>
+ </p>
+ <p style="color:darkgrey;">The "median" is the "middle" value in the list of numbers.</p>
+ <div id="functions">
+    function median(numbers) {<br>
+        // median of [3, 5, 4, 4, 1, 1, 2, 3] = 3<br>
+        var median = 0, numsLen = numbers.length;<br>
+        numbers.sort();<br>
+     
+        if (<br>
+            numsLen % 2 === 0 // is even<br>
+        ) {<br>
+            // average of two middle numbers<br>
+            median = (numbers[numsLen / 2 - 1] + numbers[numsLen / 2]) / 2;<br>
+        } else { // is odd<br>
+            // middle number only<br>
+            median = numbers[(numsLen - 1) / 2];<br>
+        }<br>
+     
+        return median;<br>
+    }<br>
+     console.log(median([3, 5, 4, 4, 1, 1, 2, 3]));<br>
+ </div>
+<!--<script>
+function median(numbers) {
+    // median of [3, 5, 4, 4, 1, 1, 2, 3] = 3
+    var median = 0, numsLen = numbers.length;
+    numbers.sort();
+ 
+    if (
+        numsLen % 2 === 0 // is even
+    ) {
+        // average of two middle numbers
+        median = (numbers[numsLen / 2 - 1] + numbers[numsLen / 2]) / 2;
+    } else { // is odd
+        // middle number only
+        median = numbers[(numsLen - 1) / 2];
+    }
+ 
+    return median;
+}
+ console.log(median([3, 5, 4, 4, 1, 1, 2, 3]));
+</script>-->
+
+<p>
+    <h2 style="color:white;">Mode</h2>
+</p>
+<p style="color:darkgrey;">The "mode" is the number that is repeated most often.<br>
+    
+     For example, the "mode" of [3, 5, 4, 4, 1, 1, 2, 3] is [1, 3, 4].</p>
+
+     <div id="functions">
+        function mode(numbers) {<br>
+            // as result can be bimodal or multi-modal,<br>
+            // the returned result is provided as an array<br>
+            // mode of [3, 5, 4, 4, 1, 1, 2, 3] = [1, 3, 4]<br>
+            var modes = [], count = [], i, number, maxIndex = 0;<br>
+         <br>
+            for (i = 0; i < numbers.length; i += 1) {<br>
+                number = numbers[i];<br>
+                count[number] = (count[number] || 0) + 1;<br>
+                if (count[number] > maxIndex) {<br>
+                    maxIndex = count[number];<br>
+                }<br>
+            }
+         
+            for (i in count)<br>
+                if (count.hasOwnProperty(i)) {<br>
+                    if (count[i] === maxIndex) {<br>
+                        modes.push(Number(i));<br>
+                    }<br>
+                }<br>
+         
+            return modes;<br>
+        }<br>
+         
+     </div>
+<!--<script>
+function mode(numbers) {
+    // as result can be bimodal or multi-modal,
+    // the returned result is provided as an array
+    // mode of [3, 5, 4, 4, 1, 1, 2, 3] = [1, 3, 4]
+    var modes = [], count = [], i, number, maxIndex = 0;
+ 
+    for (i = 0; i < numbers.length; i += 1) {
+        number = numbers[i];
+        count[number] = (count[number] || 0) + 1;
+        if (count[number] > maxIndex) {
+            maxIndex = count[number];
+        }
+    }
+ 
+    for (i in count)
+        if (count.hasOwnProperty(i)) {
+            if (count[i] === maxIndex) {
+                modes.push(Number(i));
+            }
+        }
+ 
+    return modes;
+}
+ 
+</script>-->
+
+
+</body>
+</html>
