@@ -94,7 +94,7 @@ function median(numbers) {
     
      For example, the "mode" of [3, 5, 4, 4, 1, 1, 2, 3] is [1, 3, 4].</p>
 
-     <div id="functions">
+     <p id="functions">
         function mode(numbers) {<br>
             // as result can be bimodal or multi-modal,<br>
             // the returned result is provided as an array<br>
@@ -119,7 +119,7 @@ function median(numbers) {
             return modes;<br>
         }<br>
          
-     </div>
+    </p>
 <!--<script>
 function mode(numbers) {
     // as result can be bimodal or multi-modal,
@@ -146,7 +146,26 @@ function mode(numbers) {
 }
  
 </script>-->
-
+<div style="font-size: 18px; color:whitesmoke;">
+    <p>Basic Approach to be followed: </p><br>
+Assuming size of input array is n:<br>
+<br>
+Step1: Take the count array before summing its previous counts into next index.<br>
+<br>
+Step2: The index with maximum value stored in it is the mode of given data.<br>
+<br>
+Step3: In case there are more than one indexes with maximum value in it,<br>
+ all are results for mode so we can take any.<br>
+ <br>
+Step4: Store the value at that index in a separate variable called mode.<br>
+<br>
+Step5: Continue with the normal processing of the count sort.<br>
+<br>
+Step6: In the resultant(sorted) array, if n is odd then median = middle-most element of the<br>
+sorted array, And if n is even the median = average of two middle-most elements of the sorted array.<br>
+<br>
+Step7: Store the result in a separate variable called median.<br>
+</div>
 
 </body>
 </html>
